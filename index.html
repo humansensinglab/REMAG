@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="keywords" content="synthetic data, aerial imagery, human action recognition, human activity recognition, action recognition, activity recognition, dataset">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exploring the Impact of Rendering Method and Motion Quality on Model Performance when Using a Multi-view Synthetic Data for Action Recognition</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <link rel="shortcut icon" href="./assets/block.png">
+
+
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Exploring the Impact of Rendering Method and Motion Quality on Model Performance when Using a Multi-view Synthetic Data for Action Recognition</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+			  <a href="#">Stanislav Panev</a><sup>*1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			  <a href="https://kimemily12.github.io/website/" target="_blank">Emily Kim</a><sup>*1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			  <a href="https://namburusiddhartha.github.io/" target="_blank">Sai Abhishek Si Namburu</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			  <a href="#">Desislava Nikolova</a><sup>2</sup><br/>
+			  <a href="https://celsodemelo.net/" target="_blank">Celso de Melo</a><sup>3</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			  <a href="https://www.cs.cmu.edu/~ftorre/" target="_blank">Fernando de la Torre</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			  <a href="https://www.cs.cmu.edu/~jkh/" target="_blank">Jessica Hodgins</a><sup>1</sup>
+			   
+              <br>
+			  <sup>1</sup>Carnegie Mellon University&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			  <sup>2</sup>Technical University of Sofia&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			  <sup>3</sup>Army Research Lab<br>
+              <br>
+              <h2><strong>WACV 2024</strong></h2>
+          </div>
+
+<!--           <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Facebook AI Research,</span>
+            <span class="author-block"><sup>2</sup>Carnegie Mellon University</span>
+          </div> -->
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <!-- <span class="link-block">
+                <a href="./assets/in_review.html"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv - Coming soon</span>
+                </a>
+              </span>
+			  
+			  <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span>CVF OpenAccess - Coming soon</span>
+                </a>
+              </span>
+				
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=eeebRKI-FW0"
+                   class="external-link button is-normal is-rounded is-dark"
+				   target="_blank">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <center><img style="width: 100%;" src="./assets/images/Teaser.png"></center>
+      <h2 class="subtitle has-text-centered">
+        REMAG - an HAR dataset suite comprises five datasets: one real and four synthetic by combining two renderers (CG and neural) with two motion sources (motion capture and video-based). Each of them includes three camera views. 
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container">
+
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-two-thirds">
+        <h2 class="title is-2">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+			This paper explores the use of synthetic data in a human action recognition (HAR) task to avoid the challenges of obtaining and labeling real-world datasets.
+			We introduce a new dataset suite comprising five datasets, eleven common human activities, three synchronized camera views (aerial and ground) in three outdoor environments, and three visual domains (real and two synthetic). 
+			For the synthetic data, two rendering methods (standard computer graphics and neural rendering) and two sources of human motions (motion capture and video-based motion reconstruction) were employed.
+			We evaluated each dataset type by training popular activity recognition models and comparing the performance on the real test data.
+			Our results show that synthetic data achieve slightly lower accuracy (4-8\%) than real data.
+			On the other hand, a model pre-trained on synthetic data and fine-tuned on limited real data surpasses the performance of either domain alone.
+			Standard computer graphics (CG)-rendered data delivers better performance than the data generated from the neural-based rendering method.
+			The results suggest that the quality of the human motions in the training data also affects the test results: motion capture delivers higher test accuracy.
+			Additionally, a model trained on CG aerial view synthetic data exhibits greater robustness against camera viewpoint changes than one trained on real data.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/ Abstract. -->  
+</section>
+
+
+<section class="section" id="LICENSE">
+  <div class="container content">
+    <h2 class="titile">BibTex</h2>
+    <pre><code>
+    Coming soon
+
+
+</code></pre>
+  </div>
+</section>
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>Page template borrowed from <a href="https://nerfies.github.io/"><span class="dnerf">Nerfies</span></a>.</p>
+      <p>Copyright © 2023 Carnegie Mellon University</p>
+   </div>
+  </div>
+</footer>
+  
+</body>
+</html>
